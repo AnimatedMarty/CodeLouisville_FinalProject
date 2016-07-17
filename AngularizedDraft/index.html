@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <title>Martin's Final</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400,400italic,800,700italic,700' rel='stylesheet' type='text/css'>
+</head>  
+<body ng-app="">
+<header>
+      <a href="index.html" id="logo" >
+        <h1>Page Menu Navigation Project</h1>
+      </a>
+          <nav class="{{ active }}" ng-click="$event.prevent.Default()">
+            <ul>
+              <!-- <li><a href="index.html" class="selected">Home</a></li> -->
+              <li><a href="index.html" class="home" ng-click="active='home'">Home</a></li>
+              <li><a href="about.html" class="about" ng-click="active='about'">About</a></li>
+              <li><a href="contact.html" class="contact" ng-click="active='contact'">Contact</a></li>
+            </ul>
+          </nav>
+    </header>
+<!-- <script src="scripts/app.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    
+     <footer>
+        <a href="https://twitter.com/ky_alliance"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="https://www.facebook.com/kyalliance/"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <p>&copy; 2016 Martin Lindsey</p>
+      </footer>
+    </body>
+</html>

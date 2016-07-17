@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Martin's Final</title>
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href='https://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400,400italic,800,700italic,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="styles/main.css">
+</head> 
+<body ng-app="">
+<header>
+      <a href="index.html" id="logo" >
+        <h1>Page Menu Navigation Project</h1>
+      </a>
+      <nav class="{{ active }}" ng-click="$event.prevent.Default()">
+        <ul>
+          <!-- <li><a href="index.html" class="selected">Home</a></li> -->
+          <li><a href="index.html" class="home" ng-click="active='home'">Home</a></li>
+          <li><a href="about.html" class="about" ng-click="active='about'">About</a></li>
+          <li><a href="contact.html" class="contact" ng-click="active='contact'">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
+<!-- <script src="scripts/app.js"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+    
+     <section id="primary">
+         <h3>Here's How to Contact Us.</h3>        
+     </section>
+    
+     <section id="secondary">
+          <h3>Contact Details</h3>
+        <ul class="contact-info">
+          <li class="phone"><a href="tel:502-778-8130">502-778-8130</a></li>
+          <li class="email"><a href="mailto:info@kyalliance.us">info@kyalliance.us</a></li>   
+         </ul>
+            <p>Visit us at</p>
+            <p>3208 West Broadway</p>
+            <p>Louisville, KY 40211</p> 
+     </section>
+     <footer>
+        <a href="https://twitter.com/ky_alliance"><img src="img/twitter-wrap.png" alt="Twitter Logo" class="social-icon"></a>
+        <a href="https://www.facebook.com/kyalliance/"><img src="img/facebook-wrap.png" alt="Facebook Logo" class="social-icon"></a>
+        <p>&copy; 2016 Martin Lindsey.</p>
+      </footer>
+    </body>
+</html>
