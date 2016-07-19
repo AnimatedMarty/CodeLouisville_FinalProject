@@ -22,6 +22,10 @@ app.get("/about",function(req,res){
   res.sendFile(path + "about.html");
 });
 
+app.get("/eblast",function(req,res){
+  res.sendFile(path + "eblast.html");
+});
+
 app.get("/contact",function(req,res){
   res.sendFile(path + "contact.html");
 });
