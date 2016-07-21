@@ -18,7 +18,6 @@ app.use('/public', express.static(__dirname + '/public'));
 mongoose.connect('mongodb://localhost/ENewsLetter');
  
 var Schema = new mongoose.Schema({
-	_id    : String,
 	first_name: String,
 	last_name: String,
     user_email:String
@@ -27,14 +26,9 @@ var Schema = new mongoose.Schema({
 var user = mongoose.model('customer', Schema);
  
 app.post('/new', function(req, res){
-	new user({
-		first_name: req.body.first_name,
-		last_name: req.body.last_name,
-		user_email: req.body.user_email				
-	}).save(function(err, doc){
-		if(err) res.json(err);
-		else    res.send('Successfully inserted!');
-	});
+	user.create(req.body, function(err, doc) {
+   res.json(doc);
+ })
 });
  
 // Navigate to each web page file
