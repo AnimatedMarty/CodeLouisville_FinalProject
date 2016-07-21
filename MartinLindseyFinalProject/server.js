@@ -1,7 +1,43 @@
 var express = require("express");
+var http = require("http");
+var path = require("path");
+var mongoose = require("mongoose");
 var app = express();
+var bodyParser = require("body-parser");
+var methodOverride = require("method-override");
+
+app.use(bodyParser());
+app.use(methodOverride());
+
+<!-- Not sure that I need these two-->
+// app.use(app.router);
+// app.use(express.static(path.join(__dirname, 'public')));
+
 app.use('/public', express.static(__dirname + '/public'));
 
+mongoose.connect('mongodb://localhost/ENewsLetter');
+ 
+var Schema = new mongoose.Schema({
+	_id    : String,
+	first_name: String,
+	last_name: String,
+    user_email:String
+});
+ 
+var user = mongoose.model('customer', Schema);
+ 
+app.post('/new', function(req, res){
+	new user({
+		first_name: req.body.first_name,
+		last_name: req.body.last_name,
+		user_email: req.body.user_email				
+	}).save(function(err, doc){
+		if(err) res.json(err);
+		else    res.send('Successfully inserted!');
+	});
+});
+ 
+// Navigate to each web page file
 
 var path = __dirname + '/views/';
 
@@ -25,8 +61,6 @@ app.get("/eblast",function(req,res){
 app.get("/contact",function(req,res){
   res.sendFile(path + "contact.html");
 });
-
-
 
 app.use("*",function(req,res){
   res.sendFile(path + "404.html");
