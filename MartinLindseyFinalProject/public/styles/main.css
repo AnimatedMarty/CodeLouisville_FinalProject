@@ -88,9 +88,10 @@ nav a {
 
 
 /* Added this as Angular menu feature. */
-nav.home,
-nav.about,
-nav.contact {
+nav.home.home,
+nav.about.about,
+nav.eblast.eblast,
+nav.contact.contact {
   transform: all 10.0s ease;
   background-color: #ffd700;
 }

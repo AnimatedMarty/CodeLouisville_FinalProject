@@ -9,19 +9,19 @@
     <link href='https://fonts.googleapis.com/css?family=Changa+One|Open+Sans:400,400italic,800,700italic,700' rel='stylesheet' type='text/css'>
     <!-- <script src="scripts/app.js"></script> -->
 </head>  
-<body>
+<body ng-app="">
     <div>
     <div>
         <a href="index.html" id="logo">
         <h1>Martin Lindsey Test Page</h1>
       </a>
-      <nav>
+      <nav class="{{ active }}" ng-click="$event.prevent.Default()">
         <ul>
           <!-- <li><a href="index.html" class="selected">Home</a></li> -->
-          <li class="active"><a href="/">Home<span class="sr-only">(current)</span></a></li>
-          <li><a href="/about">About Martin</a></li>
-          <li><a href="/eblast">E-Blast</a></li>
-          <li><a href="/contact">Contact Me</a></li>
+          <li class="active"><a href="/" class="home" ng-click="active='home'">Home<span class="sr-only">(current)</span></a></li>
+          <li><a href="/about" class="about" ng-click="active='about'">About Martin</a></li>
+          <li><a href="/eblast" class="eblast" ng-click="active='eblast'">E-Blast</a></li>
+          <li><a href="/contact" class="contact" ng-click="active='contact'">Contact Me</a></li>
         </ul>
       </nav>
         </div>
